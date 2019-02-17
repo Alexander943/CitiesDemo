@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.citiestest.R;
-import com.citiestest.data.City;
+import com.citiestest.data.city.model.City;
 import com.citiestest.ui.BaseFragment;
 import com.citiestest.ui.BaseListAdapter;
 import com.citiestest.ui.NavigationListener;

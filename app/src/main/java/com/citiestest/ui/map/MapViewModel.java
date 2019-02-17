@@ -2,7 +2,7 @@ package com.citiestest.ui.map;
 
 
 import com.citiestest.SchedulersFacade;
-import com.citiestest.data.City;
+import com.citiestest.data.city.model.City;
 
 import javax.inject.Inject;
 

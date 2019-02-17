@@ -1,4 +1,4 @@
-package com.citiestest.data.source.local;
+package com.citiestest.data.city.local;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

@@ -1,4 +1,4 @@
-package com.citiestest.data.source.local;
+package com.citiestest.data.city.local;
 
 
 //@Dao

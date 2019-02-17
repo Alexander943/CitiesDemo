@@ -1,6 +1,6 @@
-package com.citiestest.data.source;
+package com.citiestest.data.city;
 
-import com.citiestest.data.City;
+import com.citiestest.data.city.model.City;
 
 import java.util.List;
 

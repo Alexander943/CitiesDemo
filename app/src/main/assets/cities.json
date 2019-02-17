@@ -1,0 +1,88 @@
+{
+  "cities": [
+    {
+      "city_id": 1,
+      "city_name": "Москва",
+      "city_latitude": 55.75577164,
+      "city_longitude": 37.6177597,
+      "city_spn_latitude": 0.96495301,
+      "city_spn_longitude": 2.75756788,
+      "last_app_android_version": 7045,
+      "transfers": true,
+      "client_email_required": true,
+      "registration_promocode": true
+    },
+    {
+      "city_id": 2,
+      "city_name": "Санкт-Петербург",
+      "city_latitude": 59.99349213,
+      "city_longitude": 30.2890625,
+      "city_spn_latitude": 0.84036398,
+      "city_spn_longitude": 3.01300001,
+      "last_app_android_version": 7045,
+      "transfers": false,
+      "client_email_required": true,
+      "registration_promocode": false
+    },
+    {
+      "city_id": 3,
+      "city_name": "Воронеж",
+      "city_latitude": 51.68341446,
+      "city_longitude": 39.18263626,
+      "city_spn_latitude": 0.130182,
+      "city_spn_longitude": 0.376625,
+      "last_app_android_version": 7045,
+      "transfers": false,
+      "client_email_required": false,
+      "registration_promocode": false
+    },
+    {
+      "city_id": 4,
+      "city_name": "Ростов-на-Дону",
+      "city_latitude": 57.19223022,
+      "city_longitude": 39.41831589,
+      "city_spn_latitude": 0.056843,
+      "city_spn_longitude": 0.18831301,
+      "last_app_android_version": 7045,
+      "client_email_required": false,
+      "registration_promocode": false
+    },
+    {
+      "city_id": 5,
+      "city_name": "Уфа",
+      "city_latitude": 54.73841095,
+      "city_longitude": 55.98345947,
+      "city_spn_latitude": 0.55939698,
+      "city_spn_longitude": 1.21673596,
+      "last_app_android_version": 7045,
+      "transfers": false,
+      "registration_promocode": false
+    },
+    {
+      "city_id": 9,
+      "city_name": "Шахты",
+      "city_latitude": 47.70848465,
+      "city_longitude": 40.21595764,
+      "city_spn_latitude": 0.097761,
+      "city_spn_longitude": 0.197258,
+      "last_app_android_version": 7045,
+      "transfers": false,
+      "client_email_required": false,
+      "registration_promocode": false,
+      "parent_city": 4
+    },
+    {
+      "city_id": 107,
+      "city_name": "Нахабино (московская область)",
+      "city_latitude": 55.84620285,
+      "city_longitude": 37.16856766,
+      "city_spn_latitude": 0.037595,
+      "city_spn_longitude": 0.043736,
+      "last_app_android_version": 7045,
+      "transfers": false,
+      "client_email_required": false,
+      "registration_promocode": false,
+      "parent_city": 1
+    }
+  ]
+}

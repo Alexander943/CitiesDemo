@@ -1,8 +1,8 @@
-package com.citiestest.data.source;
+package com.citiestest.data.city;
 
-import com.citiestest.data.City;
-import com.citiestest.data.source.local.CitiesLocalDataSource;
-import com.citiestest.data.source.remote.CitiesRemoteDataSource;
+import com.citiestest.data.city.local.CitiesLocalDataSource;
+import com.citiestest.data.city.model.City;
+import com.citiestest.data.city.remote.CitiesRemoteDataSource;
 
 import java.util.List;
 

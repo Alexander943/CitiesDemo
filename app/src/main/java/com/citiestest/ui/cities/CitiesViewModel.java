@@ -1,7 +1,7 @@
 package com.citiestest.ui.cities;
 
 import com.citiestest.SchedulersFacade;
-import com.citiestest.data.City;
+import com.citiestest.data.city.model.City;
 import com.citiestest.domain.usecase.GetCities;
 
 import java.util.List;
