@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CitiesTest</string>
+    <string name="cities_list">Cities List</string>
+    <string name="city_location">City Location</string>
+</resources>
