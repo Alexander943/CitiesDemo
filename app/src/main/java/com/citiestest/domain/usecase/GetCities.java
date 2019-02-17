@@ -1,7 +1,7 @@
 package com.citiestest.domain.usecase;
 
-import com.citiestest.data.City;
-import com.citiestest.data.source.CitiesDataSource;
+import com.citiestest.data.city.model.City;
+import com.citiestest.data.city.CitiesDataSource;
 import com.citiestest.domain.UseCase;
 
 import java.util.List;

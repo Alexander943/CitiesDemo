@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.citiestest.ui.BaseListAdapter;
 import com.citiestest.R;
-import com.citiestest.data.City;
+import com.citiestest.data.city.model.City;
 import com.citiestest.ui.BaseViewHolder;
 
 import org.jetbrains.annotations.NotNull;

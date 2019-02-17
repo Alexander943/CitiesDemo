@@ -1,7 +1,7 @@
 package com.citiestest.di.module;
 
-import com.citiestest.data.source.CitiesDataSource;
-import com.citiestest.data.source.CitiesRepository;
+import com.citiestest.data.city.CitiesDataSource;
+import com.citiestest.data.city.CitiesRepository;
 
 import javax.inject.Singleton;
 

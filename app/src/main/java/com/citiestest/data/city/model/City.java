@@ -1,4 +1,4 @@
-package com.citiestest.data;
+package com.citiestest.data.city.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

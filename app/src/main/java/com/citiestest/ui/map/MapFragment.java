@@ -5,7 +5,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.citiestest.R;
-import com.citiestest.data.City;
+import com.citiestest.data.city.model.City;
 import com.citiestest.ui.BaseFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

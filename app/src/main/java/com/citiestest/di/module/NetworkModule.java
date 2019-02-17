@@ -2,7 +2,7 @@ package com.citiestest.di.module;
 
 import android.app.Application;
 
-import com.citiestest.data.network.CitiesApi;
+import com.citiestest.data.city.remote.CitiesApi;
 import com.citiestest.data.network.ConnectivityInterceptor;
 import com.google.gson.Gson;
 
@@ -67,7 +67,7 @@ public abstract class NetworkModule {
     @Provides
     static Retrofit provideRetrofit(OkHttpClient client, GsonConverterFactory gsonConverterFactory) {
         return new Retrofit.Builder()
-                .baseUrl(CitiesApi.BASE_URL)
+                .baseUrl("http://www.google.com")
                 .addConverterFactory(gsonConverterFactory)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
