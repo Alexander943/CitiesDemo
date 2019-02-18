@@ -26,6 +26,7 @@ buildscript {
         okhttpVersion = '3.10.0'
         daggerVersion = '2.19'
         glideVersion = '4.8.0'
+        roomVersion = '1.1.1'
         butterKnifeVersion = '10.1.0'
         playServicesVersion = '16.0.0'
 
