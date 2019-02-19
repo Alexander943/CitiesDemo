@@ -16,13 +16,11 @@ import io.reactivex.disposables.CompositeDisposable;
 public class CitiesViewModel extends ViewModel {
 
     private final GetCities mGetCities;
-
     private final SchedulersFacade mSchedulersFacade;
 
     private final CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     private final MutableLiveData<List<City>> mResponse = new MutableLiveData<>();
-
     private final MutableLiveData<Boolean> mLoading = new MutableLiveData<>();
 
     @Inject

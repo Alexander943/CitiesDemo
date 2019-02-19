@@ -32,9 +32,7 @@ import butterknife.BindView;
 public class CitiesFragment extends BaseFragment implements BaseListAdapter.OnItemClickListener {
 
     private CitiesAdapter mAdapter;
-
     private CitiesViewModel mViewModel;
-
     private NavigationListener mNavigationListener;
 
     @Inject
@@ -110,6 +108,7 @@ public class CitiesFragment extends BaseFragment implements BaseListAdapter.OnIt
         if (mAdapter == null || mAdapter.getItem(position) == null || mNavigationListener == null) {
             return;
         }
-        mNavigationListener.pushFragment(MapFragment.newInstance(mAdapter.getItem(position)));
+        mNavigationListener.pushFragment(MapFragment
+                .newInstance(mAdapter.getItem(position).getCityId()));
     }
 }

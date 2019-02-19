@@ -15,13 +15,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 
 
-@Singleton
 public class CitiesRemoteDataSource {
 
     private final Context mContext;
@@ -29,9 +27,9 @@ public class CitiesRemoteDataSource {
     private final Gson mGson;
 
     @Inject
-    public CitiesRemoteDataSource(@NonNull Application application,
-                                  @NonNull CitiesApi service,
-                                  @NonNull Gson gson) {
+    CitiesRemoteDataSource(@NonNull Application application,
+                           @NonNull CitiesApi service,
+                           @NonNull Gson gson) {
         mContext = application.getApplicationContext();
         mService = service;
         mGson = gson;

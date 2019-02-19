@@ -28,12 +28,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class MapFragment extends BaseFragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
-    public static final String KEY_CITY = "key.city.bundle";
-
+    private static final String KEY_CITY = "key.city.cityId";
     private static final float DEFAULT_ZOOM = 15.0f;
 
     private MapViewModel mViewModel;
-
     private GoogleMap map;
 
     @Inject
@@ -44,9 +42,9 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback, Goo
         return R.layout.map_frag;
     }
 
-    public static MapFragment newInstance(City city) {
+    public static MapFragment newInstance(int cityId) {
         Bundle args = new Bundle();
-        args.putParcelable(KEY_CITY, city);
+        args.putInt(KEY_CITY, cityId);
         MapFragment fragment = new MapFragment();
         fragment.setArguments(args);
         return fragment;
@@ -64,8 +62,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback, Goo
 
         // request values
         if (savedInstanceState == null && getArguments() != null) {
-            mViewModel.simpleAction(getArguments().getParcelable(KEY_CITY));
-            setArguments(new Bundle());
+//            mViewModel.simpleAction(getArguments().getParcelable(KEY_CITY));
+//            setArguments(new Bundle());
         }
     }
 
