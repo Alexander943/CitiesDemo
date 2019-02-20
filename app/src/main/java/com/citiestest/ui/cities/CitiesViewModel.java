@@ -2,6 +2,7 @@ package com.citiestest.ui.cities;
 
 import com.citiestest.SchedulersFacade;
 import com.citiestest.data.city.model.City;
+import com.citiestest.domain.Empty;
 import com.citiestest.domain.usecase.GetCities;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class CitiesViewModel extends ViewModel {
     private final MutableLiveData<Boolean> mLoading = new MutableLiveData<>();
 
     @Inject
-    public CitiesViewModel(GetCities getCities, SchedulersFacade schedulersFacade) {
+    CitiesViewModel(GetCities getCities, SchedulersFacade schedulersFacade) {
         mGetCities = getCities;
         mSchedulersFacade = schedulersFacade;
     }
@@ -43,14 +44,14 @@ public class CitiesViewModel extends ViewModel {
     }
 
     void loadCities() {
-        mCompositeDisposable.add(mGetCities.run(new GetCities.RequestValues())
+        mCompositeDisposable.add(mGetCities.run(new Empty())
                 .subscribeOn(mSchedulersFacade.io())
                 .observeOn(mSchedulersFacade.ui())
                 .doOnSubscribe(__ -> mLoading.postValue(true))
                 .subscribe(
                         cities -> {
                             mLoading.postValue(false);
-                            mResponse.postValue(cities.getCities());
+                            mResponse.postValue(cities);
                         },
                         err -> {
                             mLoading.postValue(false);
