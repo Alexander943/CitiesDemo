@@ -19,13 +19,13 @@ import butterknife.BindView;
 
 public class CitiesAdapter extends BaseListAdapter<City, CitiesAdapter.CityViewHolder> {
 
-
-    public CitiesAdapter(List<City> items, OnItemClickListener onItemClickListener) {
+    CitiesAdapter(List<City> items, OnItemClickListener onItemClickListener) {
         super(items, onItemClickListener);
     }
 
+    @NotNull
     @Override
-    public CityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CityViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cities_list_item, parent, false);
         return new CityViewHolder(view);

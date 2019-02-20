@@ -1,7 +1,7 @@
-package com.citiestest.domain.usecase;
+package com.citiestest.domain.cities;
 
-import com.citiestest.data.city.model.City;
 import com.citiestest.data.city.CitiesDataSource;
+import com.citiestest.data.city.model.City;
 import com.citiestest.domain.Empty;
 import com.citiestest.domain.UseCase;
 

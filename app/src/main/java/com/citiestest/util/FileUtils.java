@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
+import androidx.annotation.NonNull;
+
 public class FileUtils {
 
+    @NonNull
     public static String loadJSONFromAsset(Context context, String fileName) {
-        String json = null;
+        String json;
         try {
             InputStream is = context.getAssets().open(fileName);
             int size = is.available();
@@ -19,7 +22,7 @@ public class FileUtils {
             json = new String(buffer, StandardCharsets.UTF_8);
         } catch (IOException ex) {
             ex.printStackTrace();
-            return null;
+            return "";
         }
         return json;
     }

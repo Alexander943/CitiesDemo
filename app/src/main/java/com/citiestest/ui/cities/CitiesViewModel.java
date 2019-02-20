@@ -3,23 +3,20 @@ package com.citiestest.ui.cities;
 import com.citiestest.SchedulersFacade;
 import com.citiestest.data.city.model.City;
 import com.citiestest.domain.Empty;
-import com.citiestest.domain.usecase.GetCities;
+import com.citiestest.domain.cities.GetCities;
+import com.citiestest.ui.BaseViewModel;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import io.reactivex.disposables.CompositeDisposable;
 
 
-public class CitiesViewModel extends ViewModel {
+public class CitiesViewModel extends BaseViewModel {
 
     private final GetCities mGetCities;
     private final SchedulersFacade mSchedulersFacade;
-
-    private final CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     private final MutableLiveData<List<City>> mResponse = new MutableLiveData<>();
     private final MutableLiveData<Boolean> mLoading = new MutableLiveData<>();
@@ -28,11 +25,6 @@ public class CitiesViewModel extends ViewModel {
     CitiesViewModel(GetCities getCities, SchedulersFacade schedulersFacade) {
         mGetCities = getCities;
         mSchedulersFacade = schedulersFacade;
-    }
-
-    @Override
-    protected void onCleared() {
-        mCompositeDisposable.clear();
     }
 
     MutableLiveData<List<City>> response() {

@@ -3,30 +3,22 @@ package com.citiestest.ui.map;
 
 import com.citiestest.SchedulersFacade;
 import com.citiestest.data.city.model.City;
+import com.citiestest.ui.BaseViewModel;
 
 import javax.inject.Inject;
 
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import io.reactivex.disposables.CompositeDisposable;
 
 
-public class MapViewModel extends ViewModel {
+public class MapViewModel extends BaseViewModel {
 
     private final SchedulersFacade mSchedulersFacade;
-
-    private final CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     private final MutableLiveData<City> mResponse = new MutableLiveData<>();
 
     @Inject
-    public MapViewModel(SchedulersFacade schedulersFacade) {
+    MapViewModel(SchedulersFacade schedulersFacade) {
         mSchedulersFacade = schedulersFacade;
-    }
-
-    @Override
-    protected void onCleared() {
-        mCompositeDisposable.clear();
     }
 
     MutableLiveData<City> response() {
