@@ -10,6 +10,8 @@ import javax.inject.Singleton;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.functions.Function;
 
 
 @Singleton
@@ -26,7 +28,24 @@ public class CitiesRepository implements CitiesDataSource {
 
     @Override
     public Observable<List<City>> getCities() {
-//        return Observable.just(mCitiesDAO.getAll());
-        return mCitiesRemoteDataSource.getCities();
+        return mCitiesDAO.getAll()
+                .toObservable()
+                .flatMap((Function<List<City>, ObservableSource<List<City>>>) cities -> {
+                    if (cities.isEmpty()) {
+                        return mCitiesRemoteDataSource.getCities()
+                                .map(citiesCache -> {
+                                    mCitiesDAO.insertOrUpdate(citiesCache);
+                                    return citiesCache;
+                                });
+                    } else {
+                        return Observable.just(cities);
+                    }
+                });
+    }
+
+    @Override
+    public Observable<City> getCity(int cityId) {
+        return mCitiesDAO.getById(cityId)
+                .toObservable();
     }
 }

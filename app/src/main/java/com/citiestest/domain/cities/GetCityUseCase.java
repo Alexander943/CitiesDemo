@@ -2,28 +2,24 @@ package com.citiestest.domain.cities;
 
 import com.citiestest.data.city.CitiesDataSource;
 import com.citiestest.data.city.model.City;
-import com.citiestest.domain.Empty;
 import com.citiestest.domain.UseCase;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 
-
-public final class GetCities extends UseCase<Empty, List<City>> {
+public final class GetCityUseCase extends UseCase<Integer, City> {
 
     private final CitiesDataSource mCitiesRepository;
 
     @Inject
-    GetCities(@NonNull CitiesDataSource citiesRepository) {
+    GetCityUseCase(@NonNull CitiesDataSource citiesRepository) {
         mCitiesRepository = citiesRepository;
     }
 
     @Override
-    protected Observable<List<City>> executeUseCase(Empty requestValues) {
-        return mCitiesRepository.getCities();
+    protected Observable<City> executeUseCase(Integer requestValues) {
+        return mCitiesRepository.getCity(requestValues);
     }
 }

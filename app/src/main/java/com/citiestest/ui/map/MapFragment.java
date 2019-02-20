@@ -62,8 +62,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback, Goo
 
         // request values
         if (savedInstanceState == null && getArguments() != null) {
-//            mViewModel.simpleAction(getArguments().getParcelable(KEY_CITY));
-//            setArguments(new Bundle());
+            mViewModel.loadCity(getArguments().getInt(KEY_CITY));
         }
     }
 

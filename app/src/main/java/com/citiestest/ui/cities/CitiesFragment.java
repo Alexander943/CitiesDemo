@@ -83,7 +83,6 @@ public class CitiesFragment extends BaseFragment implements BaseListAdapter.OnIt
 
         if (savedInstanceState == null) {
             mViewModel.loadCities();
-            setArguments(new Bundle());
         }
     }
 
