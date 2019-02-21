@@ -11,5 +11,5 @@ public interface CitiesDataSource {
 
     Observable<List<City>> getCities();
 
-    Observable<City> getCity(int cityId);
+    Observable<City> getCityById(int cityId);
 }

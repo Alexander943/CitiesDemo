@@ -1,11 +1,12 @@
 package com.citiestest.data.city;
 
-import com.citiestest.data.city.local.CitiesDAO;
+import com.citiestest.data.city.local.CitiesLocalDataSource;
 import com.citiestest.data.city.model.City;
 import com.citiestest.data.city.remote.CitiesRemoteDataSource;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import androidx.annotation.NonNull;
@@ -17,24 +18,24 @@ import io.reactivex.functions.Function;
 @Singleton
 public class CitiesRepository implements CitiesDataSource {
 
-    private final CitiesDAO mCitiesDAO;
+    private final CitiesLocalDataSource mCitiesLocalDataSource;
     private final CitiesRemoteDataSource mCitiesRemoteDataSource;
 
-    public CitiesRepository(@NonNull CitiesDAO citiesDAO,
-                            @NonNull CitiesRemoteDataSource citiesRemoteDataSource) {
-        mCitiesDAO = citiesDAO;
+    @Inject
+    CitiesRepository(@NonNull CitiesLocalDataSource citiesLocalDataSource,
+                     @NonNull CitiesRemoteDataSource citiesRemoteDataSource) {
+        mCitiesLocalDataSource = citiesLocalDataSource;
         mCitiesRemoteDataSource = citiesRemoteDataSource;
     }
 
     @Override
     public Observable<List<City>> getCities() {
-        return mCitiesDAO.getAll()
-                .toObservable()
+        return mCitiesLocalDataSource.getCities()
                 .flatMap((Function<List<City>, ObservableSource<List<City>>>) cities -> {
                     if (cities.isEmpty()) {
                         return mCitiesRemoteDataSource.getCities()
                                 .map(citiesCache -> {
-                                    mCitiesDAO.insertOrUpdate(citiesCache);
+                                    mCitiesLocalDataSource.insertOrUpdate(citiesCache);
                                     return citiesCache;
                                 });
                     } else {
@@ -44,8 +45,7 @@ public class CitiesRepository implements CitiesDataSource {
     }
 
     @Override
-    public Observable<City> getCity(int cityId) {
-        return mCitiesDAO.getById(cityId)
-                .toObservable();
+    public Observable<City> getCityById(int cityId) {
+        return mCitiesLocalDataSource.getCityById(cityId);
     }
 }

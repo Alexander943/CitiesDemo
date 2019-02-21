@@ -8,7 +8,6 @@ import com.citiestest.di.module.AppModule;
 import com.citiestest.di.module.DataModule;
 import com.citiestest.di.module.FragmentBuildersModule;
 import com.citiestest.di.module.NetworkModule;
-import com.citiestest.di.module.RoomModule;
 import com.citiestest.di.module.ViewModelModule;
 
 import javax.inject.Singleton;
@@ -36,7 +35,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
         ActivityBuilderModule.class,
         FragmentBuildersModule.class,
         ViewModelModule.class,
-        RoomModule.class,
         AndroidSupportInjectionModule.class})
 public interface AppComponent extends AndroidInjector<App> {
 

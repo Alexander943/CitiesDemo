@@ -20,6 +20,6 @@ public final class GetCityUseCase extends UseCase<Integer, City> {
 
     @Override
     protected Observable<City> executeUseCase(Integer requestValues) {
-        return mCitiesRepository.getCity(requestValues);
+        return mCitiesRepository.getCityById(requestValues);
     }
 }
